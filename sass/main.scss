@@ -1,3 +1,6 @@
+@import "./pages/index";
+@import './pages/sub';
+
 * {
   margin: 0;
   padding: 0;
@@ -6,6 +9,30 @@
 
 body {
   padding: 30px;
+}
+
+@keyframes moveInLeft {
+  0% {
+    opacity: 0.1;
+    transform: translateX(-200%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes moveInRight {
+  0% {
+      opacity: 0.1;
+      transform: translateX(10rem);
+    }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
 }
 
 #header {
@@ -22,6 +49,10 @@ body {
     font-size: 60px;
     font-weight: 100;
     color: white;
+    animation-name: moveInLeft;
+    animation-duration: 1s;
+    animation-delay:0.2s;
+    animation-fill-mode: backwards;
   }
 
   &__text {
@@ -30,6 +61,9 @@ body {
     top: 40%;
 
     color: #fff;
+
+    animation-name: moveInRight;
+    animation-duration: 1s;
 
     &--main {
       font-size: 50px;
